@@ -1,11 +1,22 @@
-<H1>Animations</H1>
+<h1>Animations</h1>
 
-<mat-icon (click)="toggleMenu(); $event.stopPropagation()">menu</mat-icon>
+<mat-icon 
+  (click)="toggleMenu(); $event.preventDefault(); $event.stopPropagation()"
+>
+  menu
+</mat-icon>
 
-<nav class="d-column g-16" [@openClose]="menuOpen() ? 'true' : 'false'" [appClickOutside]="closeMenu">
+<nav 
+  class="d-column g-16"
+  [@openClose]="menuOpen() ? 'true' : 'false'"
+  [appClickOutside]="closeMenu"
+>
+
   <a href="">Login</a>
   <a href="">Register</a>
   <a href="">Forgot Password</a>
   <a href="">Log Out</a>
+  
 </nav>
+
 
